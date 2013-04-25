@@ -1,14 +1,5 @@
 <!doctype html>
 
-<?php
-include "config.php";
-$name = "Kageetai";
-$c = $_REQUEST['c'];
-if (in_array($c, $applications)) {
-	$name = "Michael Seifarth";
-}
-?>
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -52,7 +43,6 @@ if (in_array($c, $applications)) {
 			<a href="#example-work">example work</a>			
 			<a href="#side-projects">side projects</a>
 			<a id="contact-nav" href="#contact"><i class="icon-envelope">&nbsp;</i></a>
-			<?php if (in_array($c, $applications)): ?><a id="print" href="pdf/resume.pdf"><i class="icon-print">&nbsp;</i></a><?php endif ?>
 			<a id="next" href="#" onclick="impress().next();">next <i class="icon-chevron-right">&nbsp;</i></a>
 		</nav>
 
@@ -61,7 +51,6 @@ if (in_array($c, $applications)) {
 			<div id="name" class="step"
 			data-scale="5">
 				<h1><?=$name; ?></h1>
-				<?php if (in_array($c, $applications)): ?><h3><i class="icon-asterisk">&nbsp;</i>1988, Berlin, Germany</h3><?php endif ?>
 				<h2><i class="icon-bookmark-empty">&nbsp;</i>web &amp; game developer</h2>				
 			</div>
 
@@ -259,11 +248,7 @@ if (in_array($c, $applications)) {
 			data-scale="1">
 				<ul>
 					<li>
-						<?php if (in_array($c, $applications)): ?><a href="mailto:michael.seifarth@gmail.com?subject=<?=$c; ?>%20application" target="_blank">michael.seifarth@gmail.com</a>
-						<?php else: ?><a href="mailto:kageetai@gmail.com" target="_blank">kageetai@gmail.com</a><?php endif ?>
-					</li>
-					<li>
-						<?php if (in_array($c, $applications)): ?><a href="http://linkedin.com/in/kageetai/en" target="_blank">LinkedIn - linkedin.com/in/kageetai/en</a><?php endif ?>
+						<a href="mailto:kageetai@gmail.com" target="_blank">kageetai@gmail.com</a>
 					</li>
 				</ul>
 				<h2><i class="icon-envelope">&nbsp;</i>contact me</h2>

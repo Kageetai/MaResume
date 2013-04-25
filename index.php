@@ -1,0 +1,298 @@
+<!doctype html>
+
+<?php
+include "config.php";
+$name = "Kageetai";
+$c = $_REQUEST['c'];
+if (in_array($c, $applications)) {
+	$name = "Michael Seifarth";
+}
+?>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=1024" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title><?=$name; ?> | R&eacute;sum&eacute;</title>
+
+		<meta name="author" content="Michael Seifarth" />
+		<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+		<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+		<link rel="stylesheet" href="css/font-awesome.css">
+		<!--[if IE 7]>
+		<link rel="stylesheet" href="css/font-awesome-ie7.min.css">
+		<![endif]-->
+
+		<link rel="shortcut icon" href="favicon.png" />
+		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+	</head>
+
+	<body class="impress-not-supported">
+
+		<div class="fallback-message">
+			<p>
+				Your browser <b>doesn't support the features required</b>, so you are presented with a simplified version of this site.
+			</p>
+			<p>
+				For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.
+			</p>
+		</div>
+
+		<nav>
+			<a href="#name"><?=$name; ?></a>
+			<a href="#education">education</a>
+			<a href="#work-experience">work experience</a>
+			<a href="#skills">skills</a>
+			<a href="#example-work">example work</a>			
+			<a href="#side-projects">side projects</a>
+			<a id="contact-nav" href="#contact"><i class="icon-envelope">&nbsp;</i></a>
+			<?php if (in_array($c, $applications)): ?><a id="print" href="pdf/resume.pdf"><i class="icon-print">&nbsp;</i></a><?php endif ?>
+			<a id="next" href="#" onclick="impress().next();">next <i class="icon-chevron-right">&nbsp;</i></a>
+		</nav>
+
+		<div id="impress">
+
+			<div id="name" class="step"
+			data-scale="5">
+				<h1><?=$name; ?></h1>
+				<?php if (in_array($c, $applications)): ?><h3><i class="icon-asterisk">&nbsp;</i>1988, Berlin, Germany</h3><?php endif ?>
+				<h2><i class="icon-bookmark-empty">&nbsp;</i>web &amp; game developer</h2>				
+			</div>
+
+			<div id="education" class="step"
+			data-x="1500"
+			data-y="1500"
+			data-rotate="90"
+			data-scale="2">
+				<ul>
+					<li>
+						<span>2008</span>graduated from high school with technical focus
+					</li>
+					<li>
+						<span>2011</span>finished vocational training for IT specialist for application development at Deutsche Telekom AG
+					</li>
+					<li>
+						<span>2012</span>started studying International Media and Computing at  University of Applied Sciences in Berlin
+					</li>
+				</ul>
+				<h2><i class="icon-book">&nbsp;</i>education</h2>
+			</div>
+
+			<div id="work-experience" class="step"
+			data-x="700"
+			data-y="1500"
+			data-rotate="90"
+			data-scale="2">
+				<ul>
+					<li>
+						<a href="http://www.t-systems.com/" target="_blank">T-Systems</a> in Berlin, during vocational training, ASP Web Developer
+					</li>
+					<li>
+						<a href="http://www.intermatix.de/" target="_blank">Intermatix GmbH</a> in Berlin, PHP/Magento Web Developer
+					</li>
+					<li>
+						<a href="http://www.useeds.de/" target="_blank">USEEDS GmbH</a> in Berlin, PHP/Frontend Web Developer
+					</li>
+				</ul>
+				<h2><i class="icon-building">&nbsp;</i>work experience</h2>
+			</div>
+
+			<div id="skills" class="step"
+			data-x="0"
+			data-y="1500"
+			data-rotate="90"
+			data-scale="2">
+				<ul>
+					<li>
+						<a href="#/languages">Programming Languages</a>
+					</li>
+					<li>
+						<a href="#/web">Web Technologies</a>
+					</li>
+					<li>
+						<a href="#/game">Game Technologies</a>
+					</li>
+					<li>
+						<a href="#/cms">Web CMS</a>
+					</li>
+				</ul>
+				<h2><i class="icon-star">&nbsp;</i>skills</h2>
+			</div>
+
+			<div id="languages" class="step"
+			data-x="200"
+			data-y="1800"
+			data-rotate="0"
+			data-scale="1">
+				<ul>
+					<li>
+						C/C++<span id="cpp">***</span>
+					</li>
+					<li>
+						Java<span id="java">*****</span>
+					</li>
+					<li>
+						PHP<span id="php">**</span>
+					</li>
+					<li>
+						JavaScript<span id="javascript">*****</span>
+					</li>
+					<li>
+						SQL<span id="sql">***</span>
+					</li>
+				</ul>
+				<h2><i class="icon-cogs">&nbsp;</i>programming languages</h2>
+			</div>
+
+			<div id="web" class="step"
+			data-x="200"
+			data-y="2300"
+			data-rotate="0"
+			data-scale="1">
+				<ul>
+					<li>
+						HTML<span id="html">*****</span>
+					</li>
+					<li>
+						CSS<span id="css">****</span>
+					</li>
+					<li>
+						jQuery<span id="jquery">***</span>
+					</li>
+					<li>
+						node.js<span id="nodejs">*</span>
+					</li>
+					<li>
+						SASS/SCSS<span id="sass">**</span>
+					</li>
+				</ul>
+				<h2><i class="icon-cloud">&nbsp;</i>web technologies</h2>
+			</div>
+			
+			<div id="cms" class="step"
+			data-x="900"
+			data-y="2300"
+			data-rotate="0"
+			data-scale="1">
+				<ul>
+					<li>
+						Wordpress<span id="wordpress">*****</span>
+					</li>
+					<li>
+						Drupal<span id="drupal">**</span>
+					</li>
+					<li>
+						Joomla<span id="joomla">**</span>
+					</li>
+				</ul>
+				<h2><i class="icon-cloud-upload">&nbsp;</i>web CMS</h2>
+			</div>
+
+			<div id="game" class="step"
+			data-x="200"
+			data-y="2800"
+			data-rotate="0"
+			data-scale="1">
+				<ul>
+					<li>
+						Unreal Development Kit<span id="udk">**</span>
+					</li>
+					<li>
+						Unity<span id="unity">***</span>
+					</li>
+					<li>
+						Level Design<span id="leveldesign">**</span>
+					</li>
+				</ul>
+				<h2><i class="icon-fire">&nbsp;</i>game technologies</h2>
+			</div>
+			
+			<div id="example-work" class="step"
+			data-x="-700"
+			data-y="1500"
+			data-rotate="90"
+			data-scale="2">
+				<ul>
+					<li>
+						<a href="http://www.kageetai.net/portfolio/flickr-fixr" target="_blank">Flickr Fixr<img class="thumb" src="http://kageetai.lynx.uberspace.de/wordpress/wp-content/uploads/2012/06/Capture.png" alt="Flickr Fixr" /></a>						
+					</li>
+					<li>
+						<a href="http://www.kageetai.net/portfolio/bored-game" target="_blank">Bored Game<img class="thumb" src="http://www.scirra.com/arcade/images/1185/game-big.jpg" alt="Bored Game" /></a>
+					</li>
+					<li>this site using HTML5, CSS3 and SASS with Compass</li>
+				</ul>
+				<h2><i class="icon-laptop">&nbsp;</i>example work</h2>
+			</div>
+
+			<div id="side-projects" class="step"
+			data-x="-1400"
+			data-y="1500"
+			data-rotate="90"
+			data-scale="2">
+				<ul>
+					<li>
+						own website <a href="http://kageetai.net/" target="_blank">kageetai.net</a>
+					</li>
+					<li>
+						several smaller website projects currently in development
+					</li>
+					<li>
+						volunteer work at youth organization <a href="http://www.jugendmediencamp.de/" target="_blank">Jugendmediencamp</a>
+					</li>
+					<li>
+						movie and web project for young movie project
+					</li>
+				</ul>
+				<h2><i class="icon-tags">&nbsp;</i>side projects</h2>
+			</div>
+
+			<div id="contact" class="step"
+			data-x="-2000"
+			data-y="1000"
+			data-rotate="0"
+			data-scale="1">
+				<ul>
+					<li>
+						<?php if (in_array($c, $applications)): ?><a href="mailto:michael.seifarth@gmail.com?subject=<?=$c; ?>%20application" target="_blank">michael.seifarth@gmail.com</a>
+						<?php else: ?><a href="mailto:kageetai@gmail.com" target="_blank">kageetai@gmail.com</a><?php endif ?>
+					</li>
+					<li>
+						<?php if (in_array($c, $applications)): ?><a href="http://linkedin.com/in/kageetai/en" target="_blank">LinkedIn - linkedin.com/in/kageetai/en</a><?php endif ?>
+					</li>
+				</ul>
+				<h2><i class="icon-envelope">&nbsp;</i>contact me</h2>
+			</div>
+
+			<!-- <div id="overview" class="step" data-x="0" data-y="1000" data-scale="5">&nbsp;</div> -->
+
+		</div>
+
+		<div class="hint">
+			<p>
+				Use a spacebar or arrow keys to navigate
+			</p>
+		</div>
+		<script>
+			if ("ontouchstart" in document.documentElement) {
+				document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+			}
+		</script>
+
+		<script src="js/impress.js"></script>
+		<script>
+			if (!window.location.search.match(/print/)) {
+				impress().init();
+			}
+		</script>
+		<!-- <script type="text/javascript" charset="utf-8">
+		document.getElementById("id")
+		</script> -->
+
+	</body>
+</html>
